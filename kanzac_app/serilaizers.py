@@ -23,6 +23,7 @@ class VideoSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     video = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    category = CategorySerializer()
 
     class Meta:
         model = Product
